@@ -1,5 +1,5 @@
 {
-  "homepage": "https://Krzysztofe.github.io/typescript",
+  "homepage": "https://krzysztofe.github.io/typescript",
   "name": "type-script",
   "version": "0.1.0",
   "private": true,
@@ -47,6 +47,8 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0"
+    "gh": "^2.8.9",
+    "gh-pages": "^4.0.0",
+    "pages": "^0.0.16"
   }
 }
