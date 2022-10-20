@@ -14,7 +14,7 @@ interface IErrors{
     message: string
 }
 
-const ContactForm = () => {
+const Section5 = () => {
 
     const [inputValue, setInputValue] = useState<IInputValue>({
         name: "",
@@ -124,4 +124,4 @@ const ContactForm = () => {
     );
 };
 
-export default ContactForm;
+export default Section5;
