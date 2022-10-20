@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/typescript/static/css/main.833bc162.css",
+    "main.js": "/typescript/static/js/main.74d6d195.js",
+    "static/media/Background Image@2x.png": "/typescript/static/media/Background Image@2x.a6dec3687eba35c68672.png",
+    "static/media/People@2x.png": "/typescript/static/media/People@2x.5c7d5b1366e716d4aca6.png",
+    "static/media/Hero Image@2x.png": "/typescript/static/media/Hero Image@2x.473c8ca5b50bc645757b.png",
+    "static/media/Background Image.png": "/typescript/static/media/Background Image.dd60cf4173afc9084349.png",
+    "static/media/3 Columns Background@2x.png": "/typescript/static/media/3 Columns Background@2x.8ac466740bf11daa893f.png",
+    "static/media/People.png": "/typescript/static/media/People.f5eee084a785f2d199b8.png",
+    "static/media/Hero Image.png": "/typescript/static/media/Hero Image.1bee54676ebf0446f5fb.png",
+    "static/media/3 Columns Background.png": "/typescript/static/media/3 Columns Background.54dcd134c6b5241e5fbc.png",
+    "static/media/Signature@2x.png": "/typescript/static/media/Signature@2x.3aad9671edfdbad52699.png",
+    "static/media/Signature.png": "/typescript/static/media/Signature.4bc15a65bbb13d621e19.png",
+    "index.html": "/typescript/index.html",
+    "main.833bc162.css.map": "/typescript/static/css/main.833bc162.css.map",
+    "main.74d6d195.js.map": "/typescript/static/js/main.74d6d195.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.833bc162.css",
+    "static/js/main.74d6d195.js"
+  ]
+}
