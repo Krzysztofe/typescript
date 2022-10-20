@@ -4,7 +4,7 @@ import Home from './Home/Home'
 
 const App: React.FC = () => {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename = '/type-script'>
             <Routes>
                 <Route path='/' element={<Home/>}/>
             </Routes>
