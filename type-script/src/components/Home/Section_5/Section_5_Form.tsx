@@ -1,20 +1,27 @@
-import {useState, ChangeEvent} from "react";
-import {section_5_FormValidation} from '../../Library/libraryValidations'
+import {useState, ChangeEvent, FormEvent} from "react";
+import {section_5_FormValidation} from '../../Libraries/libraryValidations'
 import {postUser} from '../../FetchOperations/Fetch Operations'
 
-interface IInputValue{
-    name: string,
-    email: string,
-    message: string
+interface IInputValue {
+    name: string;
+    email: string;
+    message: string;
 }
 
-interface IErrors{
-    name: string,
-    email: string,
-    message: string
+interface IErrors {
+    name: string;
+    email: string;
+    message: string;
 }
 
-const Section5 = () => {
+export interface IFormData{
+    name: string;
+    email: string;
+    message: string;
+}
+
+
+const Section_5 = () => {
 
     const [inputValue, setInputValue] = useState<IInputValue>({
         name: "",
@@ -22,36 +29,40 @@ const Section5 = () => {
         message: ""
     })
 
-    const handleChange = (e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement> ) => {
-
+    const handleChange = (e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>): void => {
         setInputValue({
             ...inputValue,
             [e.target.name]: e.target.value
         })
     }
 
-    const [errors, setErrors] = useState <IErrors>({
+    const [errors, setErrors] = useState<IErrors>({
         name: "",
         email: "",
         message: ""
     })
 
-    // const [formData, setFormData] = useState<[] | IInputValue>([])
-    const [fetchErrors, setFetchErrors] = useState<string>('')
+    const [formData, setFormData] = useState<IFormData>({
+        name: "",
+        email: "",
+        message: ""
+    })
 
+    const [fetchErrors, setFetchErrors] = useState <null | string> (null)
 
-    const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
         e.preventDefault()
 
         setErrors(section_5_FormValidation(inputValue))
 
-        if (section_5_FormValidation(inputValue) !== '') {
+        if (section_5_FormValidation(inputValue).name !== '' ||
+            section_5_FormValidation(inputValue).message !== '' ||
+            section_5_FormValidation(inputValue).email !== '') {
             return
         }
 
-        // setFormData(inputValue)
-        postUser(inputValue, setFetchErrors)
-
+        setFormData(inputValue)
+        postUser(formData, setFetchErrors)
         setInputValue({
             name: "",
             email: "",
@@ -124,4 +135,4 @@ const Section5 = () => {
     );
 };
 
-export default Section5;
+export default Section_5;

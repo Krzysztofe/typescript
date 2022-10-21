@@ -1,15 +1,22 @@
+import {IInputValueRregister} from "../Login/Register";
 
-interface inputsValue {
+
+interface IInputsValue {
+    name: string,
+    email: string,
+    message: string
+}
+
+interface I_errors {
     name:string,
     email: string,
     message: string
 }
 
-export const section_5_FormValidation: any = (inputValue:{name: string, email:string, message: string}) => {
+export const section_5_FormValidation = (inputValue:IInputsValue) : I_errors=> {
 
     const _errors = {name: '', email: '', message: ''}
     const reg = /^[a-z\d]+[\w\d.-]*@(?:[a-z\d]+[a-z\d-]+\.){1,5}[a-z]{2,6}$/i;
-
 
     if (inputValue.name.includes(' ') || !inputValue.name) {
         _errors.name = 'imię powinno być jednym wyrazem'
@@ -22,19 +29,15 @@ export const section_5_FormValidation: any = (inputValue:{name: string, email:st
     if (inputValue.message.length < 2) {
         _errors.message = 'wiadomość minimum dwa znaki'
     }
-
-    if (_errors.name || _errors.email || _errors.message) {
         return _errors
-    }
-    return ""
-
 }
 
-export const registerValidation: any = (inputValuRregister:{email: string, password: string, passwordRepeated: string}) => {
 
-    const _errors = []
+export const registerValidation = (inputValuRregister: IInputValueRregister)
+    :string | string[] => {
+
+    const _errors: string[] = []
     const reg = /^[a-z\d]+[\w\d.-]*@(?:[a-z\d]+[a-z\d-]+\.){1,5}[a-z]{2,6}$/i;
-
 
 
     if (!inputValuRregister.email) {
@@ -51,7 +54,7 @@ export const registerValidation: any = (inputValuRregister:{email: string, passw
         _errors.push("hasła muszą być takie same")
     }
     if (_errors.length > 0) {
-        return _errors.join(' , ').concat('.')
+        return _errors.join(', ').concat('.')
     }
     return ""
 }
@@ -61,9 +64,10 @@ interface valueLogin{
     password: string
 }
 
-export const loginValidation = (inputValueLogin: {email: string, password: string}) => {
+export const loginValidation = (inputValueLogin: valueLogin)
+    : string | string[] => {
 
-    const _errors = []
+    const _errors: string[] = []
     const reg = /^[a-z\d]+[\w\d.-]*@(?:[a-z\d]+[a-z\d-]+\.){1,5}[a-z]{2,6}$/i;
 
 
@@ -77,7 +81,7 @@ export const loginValidation = (inputValueLogin: {email: string, password: strin
         _errors.push('hasło musi mieć conajmniej 6 znaków')
     }
     if (_errors.length > 0) {
-        return _errors.join(' , ').concat('.')
+        return _errors.join(', ').concat('.')
     }
     return ""
 }

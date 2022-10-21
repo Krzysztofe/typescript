@@ -5,6 +5,8 @@
 
 @import "elements/title";
 
+@import 'elements/home/nav_bar/nav_bar';
+@import "elements/home/nav_bar/nav_links";
 @import "elements/home/header";
 @import "elements/home/section_1";
 @import "elements/home/section_2";
@@ -13,6 +15,10 @@
 @import "elements/home/section_4/section_4_table";
 @import "elements/home/section_5/section_5";
 @import "elements/home/section_5/section_5_form";
+
+
+@import "elements/login/login";
+@import "elements/login/buttons_login";
 
 
 @import "elements/home/footer";
