@@ -1,9 +1,11 @@
+@import "generic/reset";
 @import "settings/variables";
 @import "settings/mixins";
 @import "settings/base";
 @import "settings/typography";
 
 @import "elements/title";
+@import "elements/buttons";
 
 @import 'elements/home/nav_bar/nav_bar';
 @import "elements/home/nav_bar/nav_links";
@@ -15,10 +17,19 @@
 @import "elements/home/section_4/section_4_table";
 @import "elements/home/section_5/section_5";
 @import "elements/home/section_5/section_5_form";
-
+@import "elements/home/footer";
 
 @import "elements/login/login";
 @import "elements/login/buttons_login";
 
-
-@import "elements/home/footer";
+@import "elements/oddaj/oddaj_main";
+@import 'elements/oddaj/oddaj_header/oddaj_header';
+@import "elements/oddaj/belt";
+@import "elements/oddaj/oddaj_forms/input_select";
+@import "elements/oddaj/oddaj_forms/oddaj_form_top";
+@import "elements/oddaj/oddaj_forms/oddaj_form1";
+@import "elements/oddaj/oddaj_forms/oddaj_form2";
+@import "elements/oddaj/oddaj_forms/oddaj_form3";
+@import "elements/oddaj/oddaj_forms/oddaj_form4";
+@import "elements/oddaj/oddaj_forms/oddaj_summary";
+@import "elements/oddaj/oddaj_forms/oddaj_thnx";

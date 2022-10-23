@@ -1,12 +1,14 @@
 import React, {FC} from 'react';
 import Title from '../Title'
 import {Link} from 'react-router-dom'
-
+import {useAuthState} from "react-firebase-hooks/auth";
+import {auth} from '../Libraries/FireBaseConfig'
 const HeaderImageSmall = require('../../asets/Hero Image.png')
 const HeaderImageLarge = require('../../asets/Hero Image@2x.png')
 
 
-const Header: FC = () => {
+const Header = () => {
+    const [user] = useAuthState(auth);
     return (
         <>
             <div className='headerSpacer' id='start'></div>
@@ -21,11 +23,11 @@ const Header: FC = () => {
                 <aside className='header__right'>
                     <Title
                         text={['zacznij pomagać!',
-                            'Oddaj niechciane rzeczy' +
+                            'Oddajjjjjjjj niechciane rzeczy' +
                             ' w zaufane ręce']}
                         classH2={'header__h2'}/>
 
-                    {/*{user?.email ?*/}
+                    {user?.email ?
                         <div className='header__btns' id='simpleSteps'>
                             <Link to='oddaj' className='header__link'>
                                 <button className="btnLarge header__btn">
@@ -39,24 +41,23 @@ const Header: FC = () => {
                                 </button>
                             </Link>
                         </div>
-                    {/*    :*/}
-                    {/*    <div className='header__btns' id='simpleSteps'>*/}
-                    {/*        <Link to='logowanie' className='header__link'>*/}
-                    {/*            <button className="btnLarge header__btn">*/}
-                    {/*                oddaj <br/> rzeczy*/}
-                    {/*            </button>*/}
-                    {/*        </Link>*/}
+                        :
+                        <div className='header__btns' id='simpleSteps'>
+                            <Link to='logowanie' className='header__link'>
+                                <button className="btnLarge header__btn">
+                                    oddaj <br/> rzeczy
+                                </button>
+                            </Link>
 
-                    {/*        <Link to='logowanie' className='header__link'>*/}
-                    {/*            <button className="btnLarge header__btn">*/}
-                    {/*                zorganizuj <br/> zbiórkę*/}
-                    {/*            </button>*/}
-                    {/*        </Link>*/}
-                    {/*    </div>*/}
-                    {/*}*/}
+                            <Link to='logowanie' className='header__link'>
+                                <button className="btnLarge header__btn">
+                                    zorganizuj <br/> zbiórkę
+                                </button>
+                            </Link>
+                        </div>
+                    }
                 </aside>
             </header>
-
         </>
     );
 };
